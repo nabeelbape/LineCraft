@@ -1,0 +1,25 @@
+{
+  "Name": "default",
+  "Folders": [
+    {
+      "Name": "Default",
+      "Commands": [
+        {
+          "Name": "SC Create",
+          "Description": "Create new service from command prompt.",
+          "Expression": "SC create \"@param1\" binpath=\"@param2\"",
+          "Parameters": [
+            {
+              "Name": "param1",
+              "DisplayName": "Service Name"
+            },
+            {
+              "Name": "param2",
+              "DisplayName": "Bin path"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
