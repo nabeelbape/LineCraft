@@ -33,8 +33,8 @@
             this.txtCommand = new System.Windows.Forms.TextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.lblCommandDescription = new System.Windows.Forms.Label();
             this.btnCopyToClipboard = new System.Windows.Forms.Button();
+            this.lblCommandDescription = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -87,8 +87,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.txtCommand);
             this.splitContainer1.Panel2.Controls.Add(this.lblCommandName);
             this.splitContainer1.Panel2.Controls.Add(this.parametersPanel);
-            this.splitContainer1.Size = new System.Drawing.Size(884, 561);
-            this.splitContainer1.SplitterDistance = 294;
+            this.splitContainer1.Size = new System.Drawing.Size(1008, 729);
+            this.splitContainer1.SplitterDistance = 335;
             this.splitContainer1.TabIndex = 4;
             // 
             // treeView1
@@ -97,17 +97,10 @@
             this.treeView1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(290, 557);
+            this.treeView1.Size = new System.Drawing.Size(331, 725);
             this.treeView1.TabIndex = 0;
+            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView1_NodeMouseClick);
             this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView1_NodeMouseDoubleClick);
-            // 
-            // lblCommandDescription
-            // 
-            this.lblCommandDescription.Location = new System.Drawing.Point(19, 54);
-            this.lblCommandDescription.Name = "lblCommandDescription";
-            this.lblCommandDescription.Size = new System.Drawing.Size(510, 23);
-            this.lblCommandDescription.TabIndex = 3;
-            this.lblCommandDescription.Text = "label1";
             // 
             // btnCopyToClipboard
             // 
@@ -119,11 +112,19 @@
             this.btnCopyToClipboard.UseVisualStyleBackColor = true;
             this.btnCopyToClipboard.Click += new System.EventHandler(this.BtnCopyToClipboard_Click);
             // 
+            // lblCommandDescription
+            // 
+            this.lblCommandDescription.Location = new System.Drawing.Point(19, 54);
+            this.lblCommandDescription.Name = "lblCommandDescription";
+            this.lblCommandDescription.Size = new System.Drawing.Size(510, 23);
+            this.lblCommandDescription.TabIndex = 3;
+            this.lblCommandDescription.Text = "label1";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -12,10 +12,12 @@ namespace LineCraft.WinFormsApp
     public class DataRepository
     {
         private readonly string appDataPath;
+        private readonly string profilePath;
 
         public DataRepository()
         {
             appDataPath = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "AppData");
+            profilePath = Path.Combine(appDataPath, "Profiles");
         }
 
         public SettingsModel GetSettings()
@@ -30,7 +32,6 @@ namespace LineCraft.WinFormsApp
         public List<ProfileModel> GetAllProfiles()
         {
             var profiles = new List<ProfileModel>();
-            string profilePath = Path.Combine(appDataPath, "Profiles");
             var files = Directory.GetFiles(profilePath, "*.json");
 
             foreach (var file in files)
@@ -41,6 +42,17 @@ namespace LineCraft.WinFormsApp
             }
 
             return profiles;
+        }
+
+        public void SaveProfile(ProfileModel profile)
+        {
+            string filePath = Path.Combine(profilePath, profile.Name + ".json");
+            string fileContent = JsonConvert.SerializeObject(profile);
+
+            using (var writer = new StreamWriter(filePath,false))
+            {
+                writer.Write(fileContent);
+            }
         }
     }
 }
